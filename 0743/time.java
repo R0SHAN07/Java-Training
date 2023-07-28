@@ -1,20 +1,14 @@
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 public class time {
-    public static void main(String[]args){
-        Scanner sc=new Scanner(System.in);
-        int hrs,min,newmin,newhr;
-        System.out.println("Enter the minutes :");
-        min=sc.nextInt();
-        if(min>=60){
-            newmin=min%60;
-             newhr=min/60;
-        }
-        else{
-             newmin=min;
-             newhr=0;
-        }
-        System.out.println("Hours:"+newhr);
-        System.out.println("Minutes:"+newmin);
-
+    public static void main(String[] args) throws InterruptedException {
+        LocalDate myObj = LocalDate.now();
+        LocalDate yes = myObj.plusDays(1);
+        LocalDate tom = myObj.plusDays(2);
+        LocalDateTime time = yes.atTime(10, 50, 10);
+        System.out.println(myObj);
+        System.out.println(yes);
+        System.out.println(tom);
+        System.out.println(time);
     }
 }
